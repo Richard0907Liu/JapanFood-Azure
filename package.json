@@ -32,5 +32,8 @@
   },
   "devDependencies": {
     "clean-css": "^4.2.1"
+  },
+  "engines": {
+    "node": "10.0"
   }
 }
