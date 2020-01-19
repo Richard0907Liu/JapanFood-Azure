@@ -63,13 +63,13 @@ app.use(express.json({ extended: false }));
 //   res.send("API Running");
 // });
 
-// // view engine setup
-// app.set("views", path.join(__dirname, "views"));
-// app.set("view engine", "jade");
+// view engine setup
+app.set("views", path.join(__dirname, "views"));
+app.set("view engine", "jade");
 
-// app.use(logger("dev"));
-// app.use(express.json());
-// app.use(express.urlencoded({ extended: false }));
+app.use(logger("dev"));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 
 app.use(passport.initialize());
 ////
@@ -79,7 +79,7 @@ app.use("/users", usersRouter);
 //this call here app.use(express.static) is what enables us to serve static data
 //from the public folder
 // Not use in production mode
-// app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "public")));
 ////////
 
 // move app.use('/') and app.use('/users') up before the authentication step
